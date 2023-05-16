@@ -1,8 +1,6 @@
-const characters = require("./characters.json");
-
 module.exports = {
   list: async () => {
-    return await characters;
+    return await require("./characters.json");
   },
   create: async () => {
     throw Error("Hay un error al crear un personaje");

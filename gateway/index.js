@@ -9,7 +9,7 @@ app.use(morgan("dev"));
 app.use(
   "/characters",
   createProxyMiddleware({
-    target: "http://character:8001",
+    target: "http://characters:8001",
     changeOrigin: true,
   })
 );
@@ -26,6 +26,14 @@ app.use(
   "/planets",
   createProxyMiddleware({
     target: "http://planets:8003",
+    changeOrigin: true,
+  })
+);
+
+app.use(
+  "/database",
+  createProxyMiddleware({
+    target: "http://database:8004",
     changeOrigin: true,
   })
 );
